@@ -1,5 +1,5 @@
 name: Lito
-description: Check package formatting or publish a package with Lito
+description: Check package formatting or publish packages with Lito
 
 inputs:
   command:
@@ -10,9 +10,17 @@ inputs:
     required: false
     default: ""
   package:
-    description: Package name to select when the workspace has multiple packages
+    description: Single package name to select
     required: false
     default: ""
+  packages:
+    description: Package names to publish in order, one per line; conflicts with package
+    required: false
+    default: ""
+  publish-interval-seconds:
+    description: Seconds to wait between successful package publishes
+    required: false
+    default: "0"
   lito-version:
     description: Lito release version to use
     required: false
@@ -37,6 +45,8 @@ runs:
       env:
         LITO_ACTION_COMMAND: ${{ inputs.command }}
         LITO_ACTION_PACKAGE: ${{ inputs.package }}
+        LITO_ACTION_PACKAGES: ${{ inputs.packages }}
+        LITO_ACTION_PUBLISH_INTERVAL_SECONDS: ${{ inputs.publish-interval-seconds }}
         LITO_ACTION_TOKEN: ${{ inputs.token }}
         LITO_ACTION_WORKING_DIRECTORY: ${{ inputs.working-directory }}
         LITO_EXECUTABLE: ${{ steps.install.outputs.executable }}
