@@ -1,4 +1,4 @@
-name: Lito
+name: lito-action
 description: Check package formatting or publish packages with Lito
 
 inputs:

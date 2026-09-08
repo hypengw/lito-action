@@ -10,7 +10,7 @@ Check formatting with:
 
 ```yaml
 - name: Check formatting
-  uses: litocpp/gh-action@v0.1.0
+  uses: hypengw/lito-action@0.1.0
   with:
     command: format-check
 ```
@@ -20,7 +20,7 @@ To publish, create a repository secret named `LITO_TOKEN` under
 
 ```yaml
 - name: Publish package
-  uses: litocpp/gh-action@v0.1.0
+  uses: hypengw/lito-action@0.1.0
   with:
     command: publish
     token: ${{ secrets.LITO_TOKEN }}
@@ -31,7 +31,7 @@ optional interval is applied between successful publishes:
 
 ```yaml
 - name: Publish packages
-  uses: litocpp/gh-action@v0.1.0
+  uses: hypengw/lito-action@0.1.0
   with:
     command: publish
     token: ${{ secrets.LITO_TOKEN }}
