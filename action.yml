@@ -24,7 +24,7 @@ inputs:
   lito-version:
     description: Lito release version to use
     required: false
-    default: v0.7.1
+    default: v0.8.0
   working-directory:
     description: Directory containing the Lito project
     required: false
